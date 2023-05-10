@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# mongoDB password
+/util/mongoPassword.js
+
 # testing
 /coverage
 

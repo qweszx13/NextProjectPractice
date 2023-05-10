@@ -1,7 +1,15 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { connectDB } from "../../util/database"
 
-export default function Home() {
+
+export default async function Home() {
+
+  const clinet =  await connectDB
+  const db = clinet.db('forum')
+  const result = await db.collection('post').find().toArray()
+  console.log(result)
+
+  db.collection
+
   return (
     <div>
       Hello World!
