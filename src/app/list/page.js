@@ -13,7 +13,7 @@ export default async function List() {
         result.map((post, index)=>{
           return(            
             <div className="list-item">
-              <Link href={"/detail/"+post._id}  key={index}>              
+              <Link prefetch={false} href={"/detail/"+post._id}  key={index}>              {/* prefetch 기능 끄기 */}
                 <h4>{post.title}</h4>
                 <p>1M 1D</p>
               </Link>              
