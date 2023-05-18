@@ -9,10 +9,10 @@ export default async function Detail(props){
   console.log(result);
 
   return(
-    <dib>
+    <div>
       <h4>Detail Page</h4>
       <h4>{result.title}</h4>
       <p>{result.content}</p>
-    </dib>
+    </div>
   )
 }
