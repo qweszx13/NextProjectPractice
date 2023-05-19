@@ -12,7 +12,7 @@ export default function DetailLink(){
 
   return(
     <div>
-      <button onClick={()=>{ router.push('/') }}>Home</button>
+      <button style={{marginBottom:"10px"}} onClick={()=>{ router.push('/') }}>Home</button>
       {/* 
         <button onClick={()=>{ router.back() }}>back</button>
         <button onClick={()=>{ router.forward() }}>forward</button>
