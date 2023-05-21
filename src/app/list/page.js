@@ -18,6 +18,9 @@ export default async function List() {
                 <p>1M 1D</p>
               </Link>              
               <DetailLink></DetailLink>
+              <Link prefetch={false} href={"/modify/"+post._id}  key={"modify"+index}>              {/* prefetch 기능 끄기 */}
+                <button>Modify</button>
+              </Link>      
             </div>          
           )
         })
