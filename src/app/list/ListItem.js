@@ -9,7 +9,7 @@ export default function ListItem({result}){
       {
         result.map((post, index)=>{
           return(            
-            <div className="list-item">
+            <div className="list-item" key={"list"+index}>
               <Link prefetch={false} href={"/detail/"+post._id}  key={index}>              {/* prefetch 기능 끄기 */}
                 <h4>{post.title}</h4>
                 <p>1M 1D</p>
@@ -22,10 +22,22 @@ export default function ListItem({result}){
                 fetch('/api/delete/new',{
                   method : 'DELETE', //PUT, DELETE, 정의안하면 GET 
                   body : post._id
-                }).then(()=>{//get 요청
-                  console.log("delete success");
+                }).then((r)=>{
+                  if(r.status == 200) {
+                    return r.json()
+                  } else {
+                    //서버가 에러코드전송시 실행할코드
+                  }
                 })
-              }}>🗑</span>      
+                .then((result)=>{ 
+                  console.log("성공시 실행할코드");
+                  console.log(result);
+                }).catch((error)=>{
+                  console.log("인터넷문제 등으로 실패시 실행할코드");
+                  console.log(error)
+                })
+              }}
+              key={"delete"+index}>🗑</span>      
             </div>          
           )
         })
