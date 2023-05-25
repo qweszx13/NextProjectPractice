@@ -19,11 +19,11 @@ export default function ListItem({result}){
                 <button>Modify</button>
               </Link>
               <span onClick={()=>{
-                fetch('/api/test',{
-                  method : 'POST', //PUT, DELETE, 정의안하면 GET 
-                  body : JSON.stringify([1,2,3])
+                fetch('/api/delete/new',{
+                  method : 'DELETE', //PUT, DELETE, 정의안하면 GET 
+                  body : post._id
                 }).then(()=>{//get 요청
-                  console.log("test success");
+                  console.log("delete success");
                 })
               }}>🗑</span>      
             </div>          
