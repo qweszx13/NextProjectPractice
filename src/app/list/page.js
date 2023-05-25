@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { connectDB } from "../../../util/database"
 import DetailLink from "./DetailLink"
+import ListItem from "./ListItem"
 
 export default async function List() {
 
@@ -9,22 +10,7 @@ export default async function List() {
 
   return (
     <div className="list-bg">
-      {
-        result.map((post, index)=>{
-          return(            
-            <div className="list-item">
-              <Link prefetch={false} href={"/detail/"+post._id}  key={index}>              {/* prefetch 기능 끄기 */}
-                <h4>{post.title}</h4>
-                <p>1M 1D</p>
-              </Link>              
-              <DetailLink></DetailLink>
-              <Link prefetch={false} href={"/modify/"+post._id}  key={"modify"+index}>              {/* prefetch 기능 끄기 */}
-                <button>Modify</button>
-              </Link>      
-            </div>          
-          )
-        })
-      }
+      <ListItem result={result}></ListItem>
     </div>
   )
 } 
