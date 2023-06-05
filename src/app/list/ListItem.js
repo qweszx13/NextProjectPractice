@@ -18,7 +18,7 @@ export default function ListItem({result}){
               <Link prefetch={false} href={"/modify/"+post._id}  key={"modify"+index}>              {/* prefetch 기능 끄기 */}
                 <button>Modify</button>
               </Link>
-              <span onClick={()=>{
+              <span onClick={(e)=>{
                 fetch('/api/delete/new',{
                   method : 'DELETE', //PUT, DELETE, 정의안하면 GET 
                   body : post._id
@@ -28,6 +28,11 @@ export default function ListItem({result}){
                   } else {
                     //서버가 에러코드전송시 실행할코드
                   }
+                }).then(()=>{
+                  e.target.parentElement.style.opacity = 0
+                  setTimeout(() => {
+                    e.target.parentElement.style.display = 'none'
+                  }, 1000);
                 })
                 .then((result)=>{ 
                   console.log("성공시 실행할코드");
