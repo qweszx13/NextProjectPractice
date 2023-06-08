@@ -1,7 +1,7 @@
-import Link from "next/link"
 import { connectDB } from "../../../util/database"
-import DetailLink from "./DetailLink"
 import ListItem from "./ListItem"
+
+export const dynamic = 'force-dynamic' //  페이지를 다이나믹으로 바꿔줌
 
 export default async function List() {
 
