@@ -1,8 +1,7 @@
 import { connectDB } from "../../../util/database"
 import ListItem from "./ListItem"
 
-export const dynamic = 'force-dynamic' //  페이지를 다이나믹으로 바꿔줌
-//export const static = 'force-static' 스테틱으로 바꿀떼는 이렇게 해야함
+export const revalidate = 20;
 
 export default async function List() {
 
