@@ -8,6 +8,9 @@
 # mongoDB password
 /util/mongoPassword.js
 
+# jwt password
+/util/jwtPassword.js
+
 # testing
 /coverage
 
